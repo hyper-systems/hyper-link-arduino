@@ -15,8 +15,8 @@ TwoWire HyperExtensionBus = TwoWire(HYPER_EXTENSION_BUS_I2C_SLAVE_SDA_PIN, HYPER
 volatile uint8_t reg_addr_ptr = 0;
 volatile uint8_t i2c_reg[HYPER_EXTENSION_DATA_REG_START_ADDR + HYPER_EXTENSION_DATA_MAX_SIZE] = {0};
 
-uint8_t (*hyper_extension_get_data)(uint8_t *data, uint8_t *data_len);
-uint8_t (*hyper_extension_set_data)(uint8_t *data, uint8_t data_len);
+int (*hyper_extension_get_data)(uint8_t *data, uint8_t *data_len);
+int (*hyper_extension_set_data)(uint8_t *data, uint8_t data_len);
 
 // reset function, should force watchdog to kick in
 void (*soft_reboot)(void);
