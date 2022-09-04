@@ -19,19 +19,19 @@ static int hyper_device_17_set_data(
     uint8_t *data,
     uint8_t len
   ) {
-	hyper_result_t res = hyper_device_17_decode(
+  hyper_result_t res = hyper_device_17_decode(
     &_device,
     data,
     len
   );
-	if (res != HYPER_OK) {
-		return -1;
-	}
+  if (res != HYPER_OK) {
+    return -1;
+  }
 
-	uint8_t _dispatched_count =
+  uint8_t _dispatched_count =
     hyper_device_17_dispatch(&_device);
 
-	return 0;
+  return 0;
 }
 
 /*
