@@ -118,6 +118,9 @@ void loop() {
 Having completed these code changes your project is ready to start publishing
 read attribute values and processing write attribute updates from the server.
 
+You can always refer to the ZIP archieve for a complete example of the
+integration.
+
 
 ### Test your setup
 
