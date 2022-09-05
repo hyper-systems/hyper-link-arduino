@@ -1,6 +1,6 @@
-name: component-b
-title: Component B
-version: 2.5
+name: hyper-link-arduino
+title: Hyper Link Arduino
+version: "1.0"
 prerelease: -beta.1
 nav:
 - modules/ROOT/nav.adoc
