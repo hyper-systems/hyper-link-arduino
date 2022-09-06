@@ -165,7 +165,7 @@ Setup - XX:XX:XX:XX:XX:XX'' WiFi network. There is no password.
 . A network setup window will open where you can provide connection
 details for your local WiFi network.
 * Note: if the network setup window does not open automatically, you can
-go to `http://192.168.1.1` in your browser.
+go to `http://192.168.8.1` in your browser.
 . The Hyper Link WiFi device will restart and connect to your network.
 You can now connect to it from your computer or mobile phone by opening
 `http://hyper-link.local` in your browser.
