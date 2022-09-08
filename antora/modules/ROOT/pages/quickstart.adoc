@@ -115,11 +115,12 @@ void loop() {
   int adcVal = analogRead(A0);
 
   // Record the values for your read attributes.
-  hyperDevice.setMyAttribute1(adcVal);
+  hyperDevice.setMyAttribute1(adcVal); <.>
 
   delay(1000);
 }
 ----
+<.> The included header has setter functions for all the attributes of your device.
 
 Having completed these code changes your project is ready to start
 publishing read attribute values and processing write attribute updates
