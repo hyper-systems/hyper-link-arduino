@@ -1,4 +1,4 @@
-= Welcome to Hyper Link Arduino documentation!
+= Hyper Link Arduino
 
 This page contains the documentaiton for the Hyper Link Arduino library.
 
