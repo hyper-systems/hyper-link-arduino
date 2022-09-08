@@ -79,7 +79,7 @@ integration:
 #include "HyperDeviceXXXI2CSlave.V1.h"
 ----
 
-==== 2. Define the global device variable
+=== 2. Define the global device variable
 
 [source,cpp]
 ----
@@ -88,7 +88,7 @@ integration:
 HyperDeviceXXXI2CSlave hyperDevice;
 ----
 
-==== 3. Setup the device identifier and bind write attributes
+=== 3. Setup the device identifier and bind write attributes
 
 [source,cpp]
 ----
@@ -107,7 +107,7 @@ void setup() {
 }
 ----
 
-==== 4. Record read attribute changes
+=== 4. Record read attribute changes
 
 [source,cpp]
 ----
@@ -129,7 +129,7 @@ from the server.
 You can always refer to the ZIP archieve for a complete example of the
 integration.
 
-=== Test your setup
+== Test your setup
 
 Once you have completed the software integration and uploaded the code
 to your board, you can start testing the setup by connecting your board
@@ -149,25 +149,14 @@ For development we recommend using our Hyper Link WiFi device that makes
 is easy to visualise the data coming in and out of your board. You can
 work with it offline or online.
 
-==== Monitor your Arduino board with the Hyper Link WiFi device
+=== Monitor your Arduino board with the Hyper Link WiFi device
 
 During development it is convenient to be able to inspect the
 communication channel between your Arduino board and the Hyper Link WiFi
 device.
 
-To start using Hyper Link WiFi:
-
-[arabic]
-. Power the device on and hold the RESET button for 5 seconds.
-. On your computer or mobile phone connect to the `Hyper Link WiFI
-Setup - XX:XX:XX:XX:XX:XX` WiFi network. There is no password.
-. A network setup window will open where you can provide connection
-details for your local WiFi network.
-* Note: if the network setup window does not open automatically, you can
-go to `http://192.168.8.1` in your browser.
-. The Hyper Link WiFi device will restart and connect to your network.
-You can now connect to it from your computer or mobile phone by opening
-`http://hyper-link.local` in your browser.
+Refer to the xref:hyper-link-wifi.adoc[] page for more details on how to
+set up the Hyper Wifi Link device.
 
 Having these steps, you can now connect your board via I2C and start
 monitoring your Arduino board with the Hyper Link WiFi device.

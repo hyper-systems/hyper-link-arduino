@@ -1,0 +1,51 @@
+= Hyper Link WiFi
+
+The Hyper Link WiFi device is an ESP32-based development board that can be used
+for data collectin and automation with WiFi connectivity.
+
+
+== Configure your WiFi connection
+
+=== 1. Reset the board
+Power the device on and hold the btn:[0] button for 5 seconds. This will reset
+any previous configuration on the board.
+
+.Hyper Link WiFi board (ESP32, SparkFun Thing Plus)
+image::hyper-link-wifi-board.jpg[ESP32,400]
+
+=== 2. Configure the WiFi connection
+On your computer or mobile phone connect to the
+`HyperLinkWiFISetupXXXXXXXXXXXX` WiFi network (no authentication is required).
+
+A network setup window will open where you can provide connection
+details for your local WiFi network. If the network setup window does not open
+automatically, you can go to `http://hyper-link.local` in your browser.
+
+== Open the device monitoring UI
+The Hyper Link WiFi device will restart and connect to your network.
+You can now connect to the same WiFi network and go to `http://hyper-link.local`
+in your browser.
+
+.Hyper Link WiFi UI
+image::hyper-link-wifi-ui.png[ESP32,800]
+
+This page lists all of the devices connected to the Hyper Link WiFi device,
+including the Hyper Like device itself (which is always the first device
+in the list).
+
+Every device entry is composed of the following details:
+
+* *Device class identifier* - an identifier of the device schema which represents
+a group of devices sharing the same attributes.
+* **Unique device identifier** - a 6-byte long device identifier which _must_ be
+globally unique.
+// TODO: Add a link to the "Obtaining unique device identifiers" page.
+* *Last message time* - the time when the last message was received from the device.
+* *Attribute values* - a list of all read attributes recorded by the device. Each
+attribute is annotated with an attribute slot number.
+
+The data encoding used for messages and attributes is optimized to be as compact as
+possible, which means that no metadata is transmitted about the attributes, their
+names and characteristics. This is why the attributes are annotated with their slot
+numbers and not actual human-readable names. You can consult the device class
+definition to map the slot numbers to the respective attribute names.

@@ -1,2 +1,3 @@
 * xref:index.adoc[Overview]
 * xref:quickstart.adoc[]
+* xref:hyper-link-wifi.adoc[]
