@@ -8,5 +8,5 @@ By integrating your devices with Hyper, your can start collecting sensor data fa
 
 image:hyper-dashboard-metrics.png[Hyper Dashboard,800]
 
-Read the xref:setup-arduino-development-kit.adoc[] guide to get started with sensor integration process.
+Read the xref:setup-arduino-development-kit.adoc[] guide to get started with the sensor integration process.
 
