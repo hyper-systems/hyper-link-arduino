@@ -70,7 +70,7 @@ your board.
 == Integrate the Arduino library
 
 The Arduino library code for your device type will include an example
-`main` file that demonstrates how to initialise and start using your
+`main` file that demonstrates how to initialize and start using your
 device type.
 
 You start making changes to the code to add any modifications necessary
