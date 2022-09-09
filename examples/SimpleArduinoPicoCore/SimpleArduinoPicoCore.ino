@@ -10,10 +10,15 @@ void setup()
 {
     Serial.begin(115200);
 
-    // Begin the device with a unique identifier obtained using `flash_get_unique_id`
-    uint8_t deviceId[6];
-    flash_get_unique_id(deviceId);
+    // get the RP2040 64bit unique id
+    uint8_t rp2040_unique_id[8];
+    flash_get_unique_id(rp2040_unique_id);
 
+    // get the last 6 bytes from the previously obtained 64bit unique id
+    uint8_t deviceId[6];
+    memcpy(deviceId, &rp2040_unique_id[2], 6);
+
+    // Begin the device with the 48 bit (6 bytes) unique identifier obtained previously
     hyperDevice.begin(deviceId);
 }
 
