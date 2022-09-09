@@ -11,8 +11,9 @@ void setup()
 {
     Serial.begin(115200);
 
-    // Begin the device with a unique identifier obtained using UniqueID8 from ArduinoUniqueID library
-    hyperDevice.begin(UniqueID8);
+    // Begin the device with a unique identifier obtained using the last 
+    // 6 bytes from UniqueID8 using the ArduinoUniqueID library
+    hyperDevice.begin(&UniqueID8[2]);
 }
 
 void loop()
