@@ -1,0 +1,89 @@
+= Integrate the Hyper Arduino library
+
+This page will walk you through the steps necessary to get your first sensor readings recorded with Hyper's platform.
+
+Make sure you have a working xref:integrate-hyper-arduino-library.adoc[Arduino development kit] before following the instructions on this page.
+
+
+== Load the library in Arduino IDE
+
+Instructions to start using the library in Arduino IDE:
+
+. Download the library ZIP archive provided by Hyper to your computer.
+. Open Arduino IDE and select menu:Sketch[Include Library > Add .ZIP Library...] in the menu. Select the library ZIP file and the library should be loaded.
+. Start a new Arduino project and select menu:Sketch[Include Library > HyperLink V1] in the menu (as illustrated in Figure 1 below).
+
+NOTE: You can find complete examples of device integration in the menu:File[Examples > HyperLink V1] menu.
+
+.Include Hyper Arduino Library
+image::hyper-link-arduino-include-library.png[Include Hyper Arduino library,600]
+
+Once completed you will see a new include line in the source code:
+
+[source,cpp]
+----
+#include <HyperDeviceXXI2CSlave.h>
+----
+
+NOTE: The include file name will contain the identifier of your device class instead of `XX`.
+
+You can now define and configure your device using the included library API.
+
+
+=== Define the global device variable
+
+Define a variable for your Hyper device in the global scope to make it easy for your to access the device anywhere in your code. Remember to replace `XX` with your device class identifier.
+
+[source,cpp]
+----
+HyperDeviceXXI2CSlave hyperDevice;
+----
+
+=== Setup the device identifier and bind write attributes
+
+All devices must have a unique identifier composed of 6 hex characters.  If possible use your boards MAC address or find an equivalent unique identifier.
+
+In addition to publishing sensor values, your Hyper device can also receive commands from the server to trigger actions. This is achieved by "binding" a function to a write attribute as illustrated below. But if you only want to record sensor readings you can safely omit the attribute bindings.
+
+[source,cpp]
+----
+void setup() {
+  // Set device id.
+  const uint8_t deviceId[6] = {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x01};
+  hyperDevice.begin(deviceId);
+
+  // Bind write attributes.
+  hyperDevice.bindMyAttribute1(onMyAttribute1Update);
+}
+----
+
+
+=== Record read attribute changes
+
+In the `loop` function, you can make any necessary call to the low-level APIs to read the measurements from your sensor. When you have the final value of the sensor measurement you can call the "set" function for the attribute that represents that sensor value.
+
+[source,cpp]
+----
+void loop() {
+  int adcVal = analogRead(A0);
+
+  // Record the values for your read attributes.
+  hyperDevice.setMyAttribute1(adcVal); <.>
+
+  delay(1000);
+}
+----
+<.> The included header has setter functions for all the attributes of your device.
+
+Having completed these code changes your project is ready to start
+publishing read attribute values and processing write attribute updates
+from the server.
+
+
+== Connect and flash the Arduino board
+
+Assuming your Arduino-compatible board is connected and configured, you can now upload the code to the board.
+
+Having completed these steps you can connect the Hyper Link WiFi device to your Arduino-compatible device (as described on the "xref:integrate-hyper-arduino-library.adoc" page) and start monitoring the incoming data from your sensor.
+
+The "xref:configure-hyper-link-wifi-device.adoc[]" page will help you setup the Link device.

@@ -1,4 +1,12 @@
 = Hyper Link Arduino
 
-This page contains the documentaiton for the Hyper Link Arduino library.
+This documentation will help you integrate your first Arduino-compatible device with Hyper's data platform.
+
+Hyper offers a selection of "Link" devices that allow your Arduino-compatible board to get automatic connectivity for a variety of IoT networks such as Thread, ZigBee, Bluetooth, LoRa, _etc_. In addition to that a "Link WiFi" device can be used during development to simplify the integration process.
+
+By integrating your devices with Hyper, your can start collecting sensor data faster while getting access to detailed metrics, automation and many other features.
+
+image:hyper-dashboard-metrics.png[Hyper Dashboard,800]
+
+Read the xref:setup-arduino-development-kit.adoc[] guide to get started with sensor integration process.
 

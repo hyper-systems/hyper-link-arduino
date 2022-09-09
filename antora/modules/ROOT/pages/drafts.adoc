@@ -1,0 +1,57 @@
+= Quickstart
+
+Hyper Link is a hardware component that adds connectivity and easy data
+IO to your project. Read more on the link:#[Hyper Link] page.
+
+The Hyper Link Arduino library provides utilities specific to your
+device schema so that you can easily publish sensor or diagnostic values
+and receiving commands from other devices.
+
+A typical workflow for working with the Hyper Link Arduino library is:
+
+[arabic]
+. link:#define-your-device-schema[*Define your device schema*]: define a
+device schema as a collection of read and write attributes that
+represent the capabilities of your device.
+. link:#download-the-arduino-library[*Download the arduino library*]:
+download the Arduino library auto-generated specifically for device
+schema.
+. link:#setup-your-board[*Setup your board*]: make sure you have
+Hyper-compatible components and configure your Arduino IDE.
+. link:#integrate-the-arduino-library[*Integrate the arduino library*]:
+follow the instructions to include the library and start working with
+the software resprestation of your device to record sensor values and
+bind incoming command handlers.
+. link:#test-your-setup[*Test your setup*]: connect everything together
+and start testing data publishing and command execution.
+
+Below is a detailed description of every step.
+
+
+== Define your device schema
+
+Head to https://hyper.systems and log-in into your dashboard. In the
+sidebar menu select btn:[Device types] and click the btn:[Create new device
+type] button in the toolbar. A form for defining a new device type will
+appear where you can provide a detailed description about your device
+type, including the supported read/write attributes and their data
+types.
+
+Once you are happy with the description of your device type press the
+btn:[Save] button. Congratulations you have completed the definition of
+your device type!
+
+
+== Download the arduino library
+
+After completing the previous step you will be able to open your device
+type page. This page includes all of the details about the read and
+write attributes of your device type.
+
+You can click the btn:[Download Arduino library] button in the toolbar to
+get a ZIP archieve containing an example Arduino project that
+demonstrates how to work with your device type.
+
+In addition to downloading the library you can also consult the
+library’s API documentation for your device type.
+

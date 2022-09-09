@@ -1,10 +1,9 @@
-= Hyper Link WiFi
+= Configure Hyper Link WiFi device
 
 The Hyper Link WiFi device is an ESP32-based development board that can be used
-for data collectin and automation with WiFi connectivity.
+for data collecting and automation with WiFi connectivity.
 
-
-== Configure your WiFi connection
+== Setup the WiFi connection
 
 === 1. Reset the board
 Power the device on and hold the btn:[0] button for 5 seconds. This will reset

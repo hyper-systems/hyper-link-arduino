@@ -1,5 +1,5 @@
 * xref:index.adoc[Overview]
-* xref:quickstart.adoc[]
-* xref:arduino-development-kit.adoc[]
-* xref:hyper-link-wifi.adoc[]
+* xref:setup-arduino-development-kit.adoc[]
+* xref:integrate-hyper-arduino-library.adoc[]
+* xref:configure-hyper-link-wifi-device.adoc[]
 * xref:hyper-link-thread.adoc[]
