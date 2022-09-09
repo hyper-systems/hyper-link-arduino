@@ -9,7 +9,7 @@ for data collectin and automation with WiFi connectivity.
 === 1. Reset the board
 Power the device on and hold the btn:[0] button for 5 seconds. This will reset
 any previous configuration on the board. The LED on the board will start blinking
-freqently indicating that the device is ready to be configured.
+quickly indicating that the device is ready to be configured.
 
 .Hyper Link WiFi board (ESP32, SparkFun Thing Plus)
 image::hyper-link-wifi-board.jpg[ESP32,400]
@@ -21,17 +21,21 @@ On your computer or mobile phone connect to the
 A network setup window will open where you can provide connection
 details for your local WiFi network.
 
+.Hyper Link WiFi setup window
+image::hyper-link-wifi-setup.png[WiFi Setup,800]
+
+
 NOTE: If the network setup window does not open
 automatically, you can go to `http://hyper-link.local` in your browser.
 
 After completing the configuration, the Hyper Link WiFi device will restart and
 connect to your network.
 
-The LED on the board will light up indicating that the device is now connected
+The LED on the board will stop blinking and stays on, indicating that the device is now connected
 to WiFi.
 
 == Open the device monitoring UI
-You can connect to the same WiFi network and go to `http://hyper-link.local`
+You can connect to the same network as the one you connected the Hyper Link WiFi in the previous step, and go to `http://hyper-link.local`
 in your browser.
 
 .Hyper Link WiFi UI

@@ -149,15 +149,15 @@ For development we recommend using our Hyper Link WiFi device that makes
 is easy to visualise the data coming in and out of your board. You can
 work with it offline or online.
 
-=== Monitor your Arduino board with the Hyper Link WiFi device
+=== Monitor your Arduino-compatible board with the Hyper Link WiFi device
 
 During development it is convenient to be able to inspect the
-communication channel between your Arduino board and the Hyper Link WiFi
+communication channel between your Arduino-compatible board and the Hyper Link WiFi
 device.
 
 Refer to the xref:hyper-link-wifi.adoc[] page for more details on how to
 set up the Hyper Wifi Link device.
 
 Having these steps, you can now connect your board via I2C and start
-monitoring your Arduino board with the Hyper Link WiFi device.
+monitoring your Arduino-compatible board with the Hyper Link WiFi device.
 

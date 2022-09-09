@@ -11,28 +11,36 @@ monitoring during development.
 
 The development kit includes the following components and parts:
 
-* *Arduino board* - serves as an example external device programmed by users;
-* *Hyper Link WiFi device* - a device that provides WiFi connectivity and can be used during development to monitor the values recorded by the Arduino board;
-* *Hyper Link Thread device* - a device that provides https://en.wikipedia.org/wiki/Thread_(network_protocol)[Thread] connectivity and can be used in a production environment to connect the Arduino board to a Thread mesh network.
-* *Bidirectional I2C isolator* - an I2C isolator with two STEMMA QT/Qwiic connectors that should be used to connect the Hyper Link devices to the Arduino board.
+* *Arduino-compatible board* - serves as an example external device programmed by users;
+* *Hyper Link WiFi device* - a device that provides WiFi connectivity and can be used during development to monitor the values recorded by the Arduino-compatible board;
+* *Hyper Link Thread device* - a device that provides https://en.wikipedia.org/wiki/Thread_(network_protocol)[Thread] connectivity and can be used in a production environment to connect the Arduino-compatible board to a Thread mesh network.
+* *Bidirectional I2C isolator* - an I2C isolator with two STEMMA QT/Qwiic connectors that should be used to connect the Hyper Link devices to the Arduino-compatible board.
 
 NOTE: The Hyper Link Thread device requires a Thread-compatible gateway device that creates the mesh network and forwards the data to Hyper's cloud environment. The gateway device is not included in the development kit and is only required for production deployments.
 
-=== Arduino board and I2C isolator
+=== Arduino-compatible board and I2C isolator
 
-The Arduino board included in the kit is meant to be a reference example of an external device to be integrated with the Hyper platform. The Arduino board is pre-configured as an external Hyper device with a number of sensor attributes.
+The Arduino-compatible board included in the kit is meant to be a reference example of an external device to be integrated with the Hyper platform. The Arduino-compatible board is pre-configured as an external Hyper device with a number of sensor attributes.
 
 The source code of the the Arduino project is available at https://github.com/hyper-systems/hyper-link-arduino.
 
 You can use this device to test the integration, program it in a way that suits your use case to collect any sensor measurements or even trigger execution of commands.
 
-.Arduino board with an I2C isolator and STEMMA QT/Qwiic connectors
-image::hyper-arduino-board-and-i2c-isolator.jpeg[Arduino board and I2C isolator,800]
+.Arduino-compatible board with an I2C isolator and STEMMA QT/Qwiic connectors
+image::hyper-arduino-compatible-board-and-i2c-isolator.jpeg[Arduino-compatible board and I2C isolator,800]
 
+NOTE: The device used in this example has the same pinout and MCU as the "Arduino Nano", and because only one I2C interface is available, it is the one used.
+
+To connect the I2C cable to the I2C isolator board use the following mapping:
+
+* *`A4`* - SDA/Blue wire
+* *`A5`* - SCL/Yellow wire
+* *`5V`* - Red wire
+* *`GND`* - Black wire
 
 === Hyper Link WiFi device
 
-Use this device to connect the Arduino board provided in the kit to establish a WiFi connection and start collecting sensor readings. The collected data can be viewed locally in a web UI provided by the Hyper Link WiFi device itself and, in addition to that, will be published to a cloud deployment associated with your account.
+Use this device to connect the Arduino-compatible board provided in the kit to establish a WiFi connection and start collecting sensor readings. The collected data can be viewed locally in a web UI provided by the Hyper Link WiFi device itself and, in addition to that, will be published to a cloud deployment associated with your account.
 
 .Hyper Link WiFi board (ESP32, SparkFun Thing Plus)
 image::hyper-link-wifi-board.jpg[ESP32,400]
@@ -42,7 +50,7 @@ For more information see the xref:hyper-link-wifi.adoc[] device page.
 
 === Hyper Link Thread device
 
-Use this device to connect the Arduino board provided in the kit to establish a Thread connection with a Thread gateway device (such as Hyper Edge). Similar to the Hyper Link WiFi board, this device provides an I2C STEMMA QT/Qwiic connector.
+Use this device to connect the Arduino-compatible board provided in the kit to establish a Thread connection with a Thread gateway device (such as Hyper Edge). Similar to the Hyper Link WiFi board, this device provides an I2C STEMMA QT/Qwiic connector.
 
 Both Hyper Link Thread and Hyper Link WiFi devices implement the same data collection protocol allowing for seamless transition from WiFi to Thread connectivity.
 
