@@ -2,3 +2,9 @@
 
 The Hyper Link Thread device is a custom board provided by Hyper for connectivity with the Thread mesh network protocol.
 
+Devices that implement the Hyper Link protocol and have an I2C connector can be connected to the Hyper Link Thread board to start publishing data to a cloud environment using the Thread mesh network.
+
+.Hyper Link Thread board
+image::hyper-link-thread-board.png[Hyper Link Thread,800]
+
+NOTE: The Hyper Link Thread device was originally called "Hyper Axon". Some development kits might included a board with the "Hyper Axon Board" label.
