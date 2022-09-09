@@ -1,0 +1,4 @@
+= Hyper Link Thread
+
+The Hyper Link Thread device is a custom board provided by Hyper for connectivity with the Thread mesh network protocol.
+
