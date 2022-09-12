@@ -36,6 +36,7 @@ Define a variable for your Hyper device in the global scope to make it easy for 
 
 [source,cpp]
 ----
+// Replace XX with your device class identifier (provided by Hyper).
 HyperDeviceXXI2CSlave hyperDevice;
 ----
 
@@ -49,10 +50,11 @@ In addition to publishing sensor values, your Hyper device can also receive comm
 ----
 void setup() {
   // Set device id.
+  // The provided id is just a placeholder you can use for testing.
   const uint8_t deviceId[6] = {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x01};
   hyperDevice.begin(deviceId);
 
-  // Bind write attributes.
+  // Optional: bind write attributes.
   hyperDevice.bindMyAttribute1(onMyAttribute1Update);
 }
 ----
@@ -60,15 +62,18 @@ void setup() {
 
 === Record read attribute changes
 
-In the `loop` function, you can make any necessary call to the low-level APIs to read the measurements from your sensor. When you have the final value of the sensor measurement you can call the "set" function for the attribute that represents that sensor value.
+In the `loop` function of your Arduino-compatible device, you can make any necessary call to the low-level APIs to read the measurements from your sensor. When you have the final value of the sensor measurement you can call the "set" function for the attribute that represents that sensor value.
 
 [source,cpp]
 ----
 void loop() {
+  // Read your sensor value.
   int adcVal = analogRead(A0);
 
   // Record the values for your read attributes.
-  hyperDevice.setMyAttribute1(adcVal); <.>
+  // Note: your "set" function name might be different depending on the
+  // name of your attribute.
+  hyperDevice.setTemperature1(adcVal); <.>
 
   delay(1000);
 }
@@ -82,7 +87,12 @@ from the server.
 
 == Connect and flash the Arduino board
 
-Assuming your Arduino-compatible board is connected and configured, you can now upload the code to the board.
+Assuming your Arduino-compatible board is connected and configured, you can now upload the code to the board. The IDE will show the "Done uploading" message in the status bar.
+
+NOTE: If you haven't previously selected the port of the board, the IDE will prompt you with a port selection window. Typically your board will look like `/dev/cu.usbserial-130`.
+
+.Select the port for the board
+image::hyper-arduino-port.png[Arduino-compatible board port,400]
 
 Having completed these steps you can connect the Hyper Link WiFi device to your Arduino-compatible device (as described on the "xref:integrate-hyper-arduino-library.adoc" page) and start monitoring the incoming data from your sensor.
 

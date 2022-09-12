@@ -34,7 +34,7 @@ The LED on the board will stop blinking and stays on, indicating that the device
 to WiFi.
 
 == Open the device monitoring UI
-You can connect to the same network as the one you connected the Hyper Link WiFi in the previous step, and go to `http://hyper-link.local`
+You can connect to the same network as the one you connected the Hyper Link WiFi to in the previous step, and go to `http://hyper-link.local`
 in your browser.
 
 .Hyper Link WiFi UI
@@ -43,6 +43,8 @@ image::hyper-link-wifi-ui.png[ESP32,800]
 This page lists all of the devices connected to the Hyper Link WiFi device,
 including the Hyper Like device itself (which is always the first device
 in the list).
+
+You can try disconnecting the I2C cable between the Arduino-compatible device and the Hyper Link device to see UI dynamically update.
 
 Every device entry is composed of the following details:
 
@@ -55,8 +57,14 @@ globally unique.
 * *Attribute values* - a list of all read attributes recorded by the device. Each
 attribute is annotated with an attribute slot number.
 
-The data encoding used for messages and attributes is optimized to be as compact as
+NOTE: The data encoding used for messages and attributes is optimized to be as compact as
 possible, which means that no metadata is transmitted about the attributes, their
 names and characteristics. This is why the attributes are annotated with their slot
 numbers and not actual human-readable names. You can consult the device class
 definition to map the slot numbers to the respective attribute names.
+
+If you can see at least two device entries on the page and the values for your sensor, the integration is now complete!
+
+In addition to showing the data locally in the Hyper Link WiFI device UI, the messages are also published to your cloud deployment (see the link in the top-right corner in the Hyper Link WiFi UI). You can log-in with your credentials to monitor the data.
+
+Please contact Hyper's support if you need any assistance.

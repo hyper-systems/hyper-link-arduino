@@ -14,7 +14,12 @@ The development kit includes the following components and parts:
 * *Hyper Link Thread device* - a device that provides https://en.wikipedia.org/wiki/Thread_(network_protocol)[Thread] connectivity and can be used in a production environment to connect the Arduino-compatible board to a Thread mesh network.
 * *Bidirectional I2C isolator* - an I2C isolator with two STEMMA QT/Qwiic connectors that should be used to connect the Hyper Link devices to the Arduino-compatible board.
 
+.Link development kit
+image::hyper-arduino-kit-components.jpeg[Link development kit,800]
+
 NOTE: The Hyper Link Thread device requires a Thread-compatible gateway device that creates the mesh network and forwards the data to Hyper's cloud environment. The gateway device is not included in the development kit and is only required for production deployments.
+
+The sections below will provide an overview about individual components and explain how the kit can be assembled.
 
 === Arduino-compatible board and I2C isolator
 
@@ -70,14 +75,15 @@ Here are the steps you can follow to fully recreate this setup:
 ** *`GND`* - Black wire
 . Connect the opposite end of the I2C cable with pins to the I2C isolator board and use an I2C cable with STEMMA QT/Qwiic connectors on both ends to connect the Hyper Link WiFi board (the red board on the image).
 . Connect the Arduino-compatible device to your computer using a mini USB cable.
-. Power on the Hyper Link WiFi device using a 5V micro USB connection. You do not have to connect it to your computer.
+. Power on the Hyper Link WiFi device using a 5V micro USB connection. You can connect it to your computer or a secondary power source like a 5V battery or a charger.
 
+Your setup should now look like Figure 5.
 
 == Setup the board in Arduino IDE
 
-Once the Arduino-compatible device is connected to your computer, you can open Arduino IDE and setup the environment.
+Once the Arduino-compatible device is connected to your computer, you can open Arduino IDE (version 1.18.x is recommended) and setup the environment.
 
-You will need to select the "Arduino Nano" board and a correct "Port" in the menu:[Tools] menu.
+You will need to select the "Arduino Nano" board, the "ATmega328P (Old Bootloader)" processor and a correct "Port" in the menu:Tools[] menu. If you have both devices, the Hyper Link and the Arduino-compatible board, connected you will see two USB serial ports. You can temporarily disconnect the Link device to determine what port is associated with the Arduino-compatible device (normally it will look like `/dev/cu.usbserial-130`).
 
 .Select the "Arduino Nano" board
 image::hyper-arduino-board-menu-selection.png[Select Arduino board,800]
