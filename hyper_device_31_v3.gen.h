@@ -1,4 +1,4 @@
-// --- HYPER GENERATED CODE %VERSION% 1645202745 ---
+// --- HYPER GENERATED CODE %VERSION% 1662984786 ---
 //
 // WARNING
 //
@@ -6,8 +6,8 @@
 // Manual changes MUST NOT be made, consult documentation at hyper.ag for more
 // information.
 
-#ifndef __HYPER_DEVICE_CLASS_17__
-#define __HYPER_DEVICE_CLASS_17__
+#ifndef __HYPER_DEVICE_CLASS_31__
+#define __HYPER_DEVICE_CLASS_31__
 
 #ifdef __cplusplus
 extern "C"
@@ -19,7 +19,6 @@ extern "C"
 #include <stdbool.h>
 #include <string.h>
 #include "cmp.h"
-
 #include "hyper_device_core_v3.h"
 
 // --- DEVICE TYPE ---
@@ -29,41 +28,33 @@ typedef struct {
   uint8_t device_id[6];
   
 
-  uint8_t temperature_1_set : 1;
-  float temperature_1;
-  uint8_t temperature_2_set : 1;
-  float temperature_2;
-  uint8_t temperature_3_set : 1;
-  float temperature_3;
-  uint8_t temperature_4_set : 1;
-  float temperature_4;
+  uint8_t fcap_lemna_density_0_1_set : 1;
+  float fcap_lemna_density_0_1;
+  uint8_t fcap_lemna_sensor_distance_0_1_set : 1;
+  float fcap_lemna_sensor_distance_0_1;
   
-} hyper_device_17_t;
+} hyper_device_31_t;
 
-void hyper_device_17_reset(hyper_device_17_t * device) {
-  device->temperature_1_set = 0;
-  device->temperature_1 = 0.0;
-  device->temperature_2_set = 0;
-  device->temperature_2 = 0.0;
-  device->temperature_3_set = 0;
-  device->temperature_3 = 0.0;
-  device->temperature_4_set = 0;
-  device->temperature_4 = 0.0;
+void hyper_device_31_reset(hyper_device_31_t * device) {
+  device->fcap_lemna_density_0_1_set = 0;
+  device->fcap_lemna_density_0_1 = 0.0;
+  device->fcap_lemna_sensor_distance_0_1_set = 0;
+  device->fcap_lemna_sensor_distance_0_1 = 0.0;
 }
 
 
-void hyper_device_17_init(hyper_device_17_t * device, uint8_t device_id[6]) {
+void hyper_device_31_init(hyper_device_31_t * device, uint8_t device_id[6]) {
   device->version = 3;
-  device->device_class_id = 17;
+  device->device_class_id = 31;
   memcpy(device->device_id, device_id, 6);
-  hyper_device_17_reset(device);
+  hyper_device_31_reset(device);
 }
 
 
 // --- PRINT DEVICE ---
-void hyper_device_17_print(hyper_device_17_t * device) {
+void hyper_device_31_print(hyper_device_31_t * device) {
   HYPER_PRINTF(
-    "(hyper_device_17_t\n"
+    "(hyper_device_31_t\n"
     "  (version %d)\n"
     "  (device_class_id %lu)\n"
     "  (device_id (%02x %02x %02x %02x %02x %02x))\n",
@@ -72,28 +63,16 @@ void hyper_device_17_print(hyper_device_17_t * device) {
     device->device_id[4], device->device_id[5]);
       
 
-  if (device->temperature_1_set) {
-    HYPER_PRINTF("  (temperature_1 (f32 %f))\n", device->temperature_1);
+  if (device->fcap_lemna_density_0_1_set) {
+    HYPER_PRINTF("  (fcap_lemna_density_0_1 (f32 %f))\n", device->fcap_lemna_density_0_1);
   } else {
-    HYPER_PRINTF("  (temperature_1 (f32 none))\n");
+    HYPER_PRINTF("  (fcap_lemna_density_0_1 (f32 none))\n");
   }
 
-  if (device->temperature_2_set) {
-    HYPER_PRINTF("  (temperature_2 (f32 %f))\n", device->temperature_2);
+  if (device->fcap_lemna_sensor_distance_0_1_set) {
+    HYPER_PRINTF("  (fcap_lemna_sensor_distance_0_1 (f32 %f))\n", device->fcap_lemna_sensor_distance_0_1);
   } else {
-    HYPER_PRINTF("  (temperature_2 (f32 none))\n");
-  }
-
-  if (device->temperature_3_set) {
-    HYPER_PRINTF("  (temperature_3 (f32 %f))\n", device->temperature_3);
-  } else {
-    HYPER_PRINTF("  (temperature_3 (f32 none))\n");
-  }
-
-  if (device->temperature_4_set) {
-    HYPER_PRINTF("  (temperature_4 (f32 %f))\n", device->temperature_4);
-  } else {
-    HYPER_PRINTF("  (temperature_4 (f32 none))\n");
+    HYPER_PRINTF("  (fcap_lemna_sensor_distance_0_1 (f32 none))\n");
   }
   HYPER_PRINTF(")\n");
 }
@@ -102,32 +81,20 @@ void hyper_device_17_print(hyper_device_17_t * device) {
 // --- BIND ATTRIBUTES ---
 
 // --- SET ATTRIBUTES ---
-void hyper_device_17_set_temperature_1(hyper_device_17_t * device, float value) {
-  device->temperature_1_set = 1;
-  device->temperature_1 = value;
+void hyper_device_31_set_fcap_lemna_density_0_1(hyper_device_31_t * device, float value) {
+  device->fcap_lemna_density_0_1_set = 1;
+  device->fcap_lemna_density_0_1 = value;
 }
 
 
-void hyper_device_17_set_temperature_2(hyper_device_17_t * device, float value) {
-  device->temperature_2_set = 1;
-  device->temperature_2 = value;
-}
-
-
-void hyper_device_17_set_temperature_3(hyper_device_17_t * device, float value) {
-  device->temperature_3_set = 1;
-  device->temperature_3 = value;
-}
-
-
-void hyper_device_17_set_temperature_4(hyper_device_17_t * device, float value) {
-  device->temperature_4_set = 1;
-  device->temperature_4 = value;
+void hyper_device_31_set_fcap_lemna_sensor_distance_0_1(hyper_device_31_t * device, float value) {
+  device->fcap_lemna_sensor_distance_0_1_set = 1;
+  device->fcap_lemna_sensor_distance_0_1 = value;
 }
 
 
 // --- ENCODE DEVICE ---
-hyper_result_t hyper_device_17_encode(hyper_device_17_t * device, uint8_t * out, uint8_t * out_len) {
+hyper_result_t hyper_device_31_encode(hyper_device_31_t * device, uint8_t * out, uint8_t * out_len) {
   cmp_ctx_t cmp_ctx = {0};
   hyper_msgpack_buffer_t msgpack_buf = {out, 0};
 
@@ -151,10 +118,8 @@ hyper_result_t hyper_device_17_encode(hyper_device_17_t * device, uint8_t * out,
   }
 
   uint8_t defined_attributes_count = 0;
-  if (device->temperature_1_set) ++defined_attributes_count;
-  if (device->temperature_2_set) ++defined_attributes_count;
-  if (device->temperature_3_set) ++defined_attributes_count;
-  if (device->temperature_4_set) ++defined_attributes_count;
+  if (device->fcap_lemna_density_0_1_set) ++defined_attributes_count;
+  if (device->fcap_lemna_sensor_distance_0_1_set) ++defined_attributes_count;
 
   // Attributes
   if (!cmp_write_map(&cmp_ctx, defined_attributes_count)) {
@@ -162,49 +127,25 @@ hyper_result_t hyper_device_17_encode(hyper_device_17_t * device, uint8_t * out,
     return HYPER_ERR_ENCODE;
   }
 
-  // 0: temperature_1
-  if (device->temperature_1_set) {
+  // 0: fcap_lemna_density_0_1
+  if (device->fcap_lemna_density_0_1_set) {
     if (!cmp_write_u8(&cmp_ctx, 0)) {
       HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
       return HYPER_ERR_ENCODE;
     }
-    if (!cmp_write_float(&cmp_ctx, device->temperature_1)) {
+    if (!cmp_write_float(&cmp_ctx, device->fcap_lemna_density_0_1)) {
       HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
       return HYPER_ERR_ENCODE;
     }
   }
 
-  // 1: temperature_2
-  if (device->temperature_2_set) {
+  // 1: fcap_lemna_sensor_distance_0_1
+  if (device->fcap_lemna_sensor_distance_0_1_set) {
     if (!cmp_write_u8(&cmp_ctx, 1)) {
       HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
       return HYPER_ERR_ENCODE;
     }
-    if (!cmp_write_float(&cmp_ctx, device->temperature_2)) {
-      HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
-      return HYPER_ERR_ENCODE;
-    }
-  }
-
-  // 2: temperature_3
-  if (device->temperature_3_set) {
-    if (!cmp_write_u8(&cmp_ctx, 2)) {
-      HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
-      return HYPER_ERR_ENCODE;
-    }
-    if (!cmp_write_float(&cmp_ctx, device->temperature_3)) {
-      HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
-      return HYPER_ERR_ENCODE;
-    }
-  }
-
-  // 3: temperature_4
-  if (device->temperature_4_set) {
-    if (!cmp_write_u8(&cmp_ctx, 3)) {
-      HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
-      return HYPER_ERR_ENCODE;
-    }
-    if (!cmp_write_float(&cmp_ctx, device->temperature_4)) {
+    if (!cmp_write_float(&cmp_ctx, device->fcap_lemna_sensor_distance_0_1)) {
       HYPER_PRINTF("%s\n", cmp_strerror(&cmp_ctx));
       return HYPER_ERR_ENCODE;
     }
@@ -216,7 +157,7 @@ hyper_result_t hyper_device_17_encode(hyper_device_17_t * device, uint8_t * out,
 
 
 // --- DECODE DEVICE ---
-hyper_result_t hyper_device_17_decode(hyper_device_17_t * device, uint8_t * in, uint8_t in_size) {
+hyper_result_t hyper_device_31_decode(hyper_device_31_t * device, uint8_t * in, uint8_t in_size) {
   cmp_ctx_t cmp_ctx = {0};
   hyper_msgpack_buffer_t msgpack_buf = {in, 0};
 
@@ -278,36 +219,18 @@ hyper_result_t hyper_device_17_decode(hyper_device_17_t * device, uint8_t * in, 
         return HYPER_ERR_DECODE;
       }
       switch (key) {
-      case 0: // temperature_1
-        if (cmp_object_as_float(&obj, &device->temperature_1)) {
-          device->temperature_1_set = 1; 
+      case 0: // fcap_lemna_density_0_1
+        if (cmp_object_as_float(&obj, &device->fcap_lemna_density_0_1)) {
+          device->fcap_lemna_density_0_1_set = 1; 
         } else {
           HYPER_PRINTF("%s\n", "could not read value\n");
             return HYPER_ERR_DECODE;
         }
         break;
 
-      case 1: // temperature_2
-        if (cmp_object_as_float(&obj, &device->temperature_2)) {
-          device->temperature_2_set = 1; 
-        } else {
-          HYPER_PRINTF("%s\n", "could not read value\n");
-            return HYPER_ERR_DECODE;
-        }
-        break;
-
-      case 2: // temperature_3
-        if (cmp_object_as_float(&obj, &device->temperature_3)) {
-          device->temperature_3_set = 1; 
-        } else {
-          HYPER_PRINTF("%s\n", "could not read value\n");
-            return HYPER_ERR_DECODE;
-        }
-        break;
-
-      case 3: // temperature_4
-        if (cmp_object_as_float(&obj, &device->temperature_4)) {
-          device->temperature_4_set = 1; 
+      case 1: // fcap_lemna_sensor_distance_0_1
+        if (cmp_object_as_float(&obj, &device->fcap_lemna_sensor_distance_0_1)) {
+          device->fcap_lemna_sensor_distance_0_1_set = 1; 
         } else {
           HYPER_PRINTF("%s\n", "could not read value\n");
             return HYPER_ERR_DECODE;
@@ -328,15 +251,14 @@ hyper_result_t hyper_device_17_decode(hyper_device_17_t * device, uint8_t * in, 
 
 
 // --- DISPATCH DEVICE ---
-uint8_t hyper_device_17_dispatch(hyper_device_17_t * device) {
+uint8_t hyper_device_31_dispatch(hyper_device_31_t * device) {
   uint8_t count = 0;
 
   return count;
 }
 
-
 #ifdef __cplusplus
 }
 #endif
 
-#endif // __HYPER_DEVICE_CLASS_17__
+#endif // __HYPER_DEVICE_CLASS_31__

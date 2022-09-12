@@ -1,7 +1,7 @@
-#include "HyperDevice17I2CSlave.h"
+#include "HyperDevice31I2CSlave.h"
 
 // Initialize global Hyper device.
-HyperDevice17I2CSlave hyperDevice;
+HyperDevice31I2CSlave hyperDevice;
 
 void setup()
 {
@@ -14,12 +14,28 @@ void setup()
 
 void loop()
 {
-    int adcVal = analogRead(A0);
-    Serial.print("Read ADC Value: ");
-    Serial.println(adcVal);
+    int lemna_sensor_density_adc_raw = analogRead(A0);
+    Serial.print("lemna_sensor_density_adc_raw: ");
+    Serial.println(lemna_sensor_density_adc_raw);
+
+    // https://www.arduino.cc/en/Tutorial/BuiltInExamples/ReadAnalogVoltage
+    float lemna_sensor_density_volt = lemna_sensor_density_adc_raw * 5.0 / 102.0;
+    Serial.print("lemna_sensor_density_volt: ");
+    Serial.println(lemna_sensor_density_volt);
 
     // Set the attribute value.
-    hyperDevice.setTemperature1(adcVal);
+    hyperDevice.setFCAPLemnaSensorDensity_1(lemna_sensor_density_volt);
+
+    int lemna_sensor_distance_adc_raw = analogRead(A1);
+    Serial.print("lemna_sensor_distance_adc_raw: ");
+    Serial.println(lemna_sensor_distance_adc_raw);
+
+    float lemna_sensor_distance_volt = lemna_sensor_distance_adc_raw * 5.0 / 1023.0;
+    Serial.print("lemna_sensor_distance_volt: ");
+    Serial.println(lemna_sensor_distance_volt);
+
+    // Set the attribute value.
+    hyperDevice.setFCAPLemnaSensorDistance_1(lemna_sensor_distance_volt);
 
     delay(1000);
 }
