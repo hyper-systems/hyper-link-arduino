@@ -3,7 +3,6 @@
 
 #include "hyper_extension_bus.h"
 
-
 #if defined(ARDUINO_ARCH_AVR)
 TwoWire HyperExtensionBus = TwoWire();
 #elif defined(ARDUINO_ARCH_MBED_RP2040) || defined(ARDUINO_ARCH_RP2040)
@@ -27,7 +26,9 @@ void receiveEvent(int rx_bytes)
 
   if (rx_bytes != available_bytes)
   {
+#ifdef HYPER_EXTENSION_BUS_DEBUG
     Serial.println("error: rx_bytes != available_bytes \n");
+#endif
     // reset
     soft_reboot();
     return;
@@ -56,7 +57,9 @@ void receiveEvent(int rx_bytes)
         i2c_reg[HYPER_EXTENSION_BUS_CONTROL_REG_ADDR] = ret;
         if (ret != 0)
         {
+#ifdef HYPER_EXTENSION_BUS_DEBUG
           Serial.println("error: hyper_extension_get_data failed");
+#endif
           return;
         }
       }
@@ -71,13 +74,17 @@ void receiveEvent(int rx_bytes)
           i2c_reg[HYPER_EXTENSION_BUS_CONTROL_REG_ADDR] = ret;
           if (ret != 0)
           {
+#ifdef HYPER_EXTENSION_BUS_DEBUG
             Serial.println("error: hyper_extension_set_data failed");
+#endif
             return;
           }
         }
         else
         {
+#ifdef HYPER_EXTENSION_BUS_DEBUG
           Serial.println("error: HYPER_EXTENSION_BUS_CMD_SET_DATA but HYPER_EXTENSION_BUS_DATA_SIZE_REG_ADDR is 0!");
+#endif
           return;
         }
       }
@@ -99,8 +106,8 @@ void requestEvent()
 
 void hyper_extension_bus_slave_init(
     int (*get_data)(uint8_t *data, uint8_t *data_len),
-    int (*set_data)(uint8_t *data, uint8_t data_len)
-) {
+    int (*set_data)(uint8_t *data, uint8_t data_len))
+{
   hyper_extension_get_data = get_data;
   hyper_extension_set_data = set_data;
 
