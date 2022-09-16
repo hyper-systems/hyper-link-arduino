@@ -19,7 +19,7 @@ void loop()
     Serial.println(lemna_sensor_density_adc_raw);
 
     // https://www.arduino.cc/en/Tutorial/BuiltInExamples/ReadAnalogVoltage
-    float lemna_sensor_density_volt = lemna_sensor_density_adc_raw * 5.0 / 102.0;
+    float lemna_sensor_density_volt = lemna_sensor_density_adc_raw * 5.0 / 1023.0;
     Serial.print("lemna_sensor_density_volt: ");
     Serial.println(lemna_sensor_density_volt);
 
